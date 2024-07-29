@@ -273,11 +273,6 @@ public class InAppWebViewClient extends WebViewClient {
     final InAppWebView webView = (InAppWebView) view;
 
     if (request.isForMainFrame()) {
-      if (webView.customSettings.disableDefaultErrorPage) {
-        webView.stopLoading();
-        webView.loadUrl("about:blank");
-      }
-
       webView.isLoading = false;
       previousAuthRequestFailureCount = 0;
       credentialsProposed = null;
